@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1c085852.css",
+    "main.css": "/portfolio/static/css/main.63f1116f.css",
     "main.js": "/portfolio/static/js/main.2cafcd9e.js",
     "static/media/Lin_Zhang_Resume.pdf": "/portfolio/static/media/Lin_Zhang_Resume.d53d577534361d36e9ef.pdf",
     "static/media/linkedin-icon.png": "/portfolio/static/media/linkedin-icon.65c1e53985ccab646d0f.png",
@@ -8,11 +8,11 @@
     "static/media/avatar.jpg": "/portfolio/static/media/avatar.a56c929d39e6d32df38f.jpg",
     "static/media/github-icon.png": "/portfolio/static/media/github-icon.82a2a3af04b3e67185a0.png",
     "index.html": "/portfolio/index.html",
-    "main.1c085852.css.map": "/portfolio/static/css/main.1c085852.css.map",
+    "main.63f1116f.css.map": "/portfolio/static/css/main.63f1116f.css.map",
     "main.2cafcd9e.js.map": "/portfolio/static/js/main.2cafcd9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c085852.css",
+    "static/css/main.63f1116f.css",
     "static/js/main.2cafcd9e.js"
   ]
 }
