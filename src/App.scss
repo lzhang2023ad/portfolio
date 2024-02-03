@@ -1,0 +1,60 @@
+.app-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+body {
+    overflow: hidden;
+}
+.main-container {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  line-height: 16px;
+  color: white;
+  text-align: center;
+}
+.content-container {
+    position: absolute;
+    top: 300px;
+    width: 40%;
+    padding: 30px;
+    border-radius: 36px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.avatar {
+    border-radius: 50%;
+    width: 40%;
+    margin: 30px;
+}
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkedin-btn {
+  background-image: url('./assets/images/linkedin-icon.png');
+  width: 75px;
+  height:75px;
+  background-size: 66% 66%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.resume-btn {
+  background-image: url('./assets/images/CV-icon.png');
+  width: 75px;
+  height:75px;
+  background-size: 66% 66%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.github-btn {
+  background-image: url('./assets/images/github-icon.png');
+  width: 75px;
+  height:75px;
+  background-size: 100% 100%;
+}
