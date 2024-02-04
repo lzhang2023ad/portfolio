@@ -1,11 +1,18 @@
 import React from 'react';
+import { useWindowSize } from "@uidotdev/usehooks";
 import myAvatar from './assets/images/avatar.jpg';
 import ResumeFile from './assets/files/Lin_Zhang_Resume.pdf'
 import './App.scss'
 
 
 function App() {
-    const staticLabels = {};
+    const staticLabels = {
+        hello: "Hello, I'm",
+        name: "Lin Zhang",
+        role: "Senior Frontend Software Engineer"
+    };
+    const size = useWindowSize();
+    let interval;
     const ButtonGroup = () => {
         return (
             <div className='btn-group'>
@@ -33,19 +40,39 @@ function App() {
             </div>
         );
     };
-    const CodeRain = () => {
-        return (<canvas id='rain' width="1920" height="1080" ></canvas>);
+    const CodeRain = ({ width, height }) => {
+        return (<canvas id='rain' width={width} height={height} ></canvas>);
     };
     const Avatar = () => {
         return (<img src={myAvatar} className="avatar" alt="avatar" />);
     }
+    const TextContainer = ({ labels }) => {
+        return (
+            <div>
+                <p>{labels.hello}</p>
+                <h1>{labels.name}</h1>
+                <p>{labels.role}</p>
+            </div>
+        );
+    };
+    const ContentContainer = ({ labels }) => {
+        return (
+            <div className="content-container">
+                <TextContainer labels={labels} />
+                <Avatar />
+                <ButtonGroup />
+            </div>
+        );
+    };
     const MainContainer = ({ labels }) => {
         React.useEffect(() => {
             let c = document.getElementById("rain");
             let pen = c.getContext('2d');
+            pen.clearRect(0, 0, c.width, c.height);
+            clearInterval(interval);
             let ys = Array(parseInt(c.width / 10)).fill(0);
             let random_char = () => String.fromCharCode(parseInt(65 + Math.random() * (90 - 65)));
-            setInterval(() => {
+            interval = setInterval(() => {
                 pen.fillStyle = 'rgba(0, 0, 0, 0.09)';
                 pen.fillRect(0, 0, c.width, c.height);
                 pen.fillStyle = '#0f0';
@@ -57,14 +84,8 @@ function App() {
         }, []);
         return (
             <div className="main-container">
-                <CodeRain/>
-                <div className="content-container">
-                    <p>Hello, I'm</p>
-                    <h1>Lin Zhang</h1>
-                    <p>Senior Frontend Software Engineer</p>
-                    <Avatar />
-                    <ButtonGroup />
-                </div>
+                <CodeRain width={size.width} height={size.height} />
+                <ContentContainer labels={labels} />
             </div>
         );
     };
